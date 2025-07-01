@@ -32,11 +32,21 @@ public class CheckGuest {
     boolean isUserFound = false;
 
     // Soluzione con for
-    for (int i = 0; i < guestsArr.length; i++) {
-      if (formatStringForCheck(guestsArr[i]).equals(formatStringForCheck(userName))) {
+    // for (int i = 0; i < guestsArr.length; i++) {
+    // if
+    // (formatStringForCheck(guestsArr[i]).equals(formatStringForCheck(userName))) {
+    // isUserFound = true;
+    // break;
+    // }
+    // }
+
+    // Soluzione con while
+    int index = 0;
+    while (!isUserFound && index < guestsArr.length) {
+      if (formatStringForCheck(guestsArr[index]).equals(formatStringForCheck(userName)))
         isUserFound = true;
-        break;
-      }
+
+      index++;
     }
 
     if (isUserFound) {
